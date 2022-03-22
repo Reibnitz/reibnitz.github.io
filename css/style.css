@@ -47,6 +47,7 @@ header h1 {
     justify-content: center;
     align-items: center;
     flex-grow:1;
+    flex-shrink:1;
     overflow: hidden;
 }
 
@@ -57,14 +58,14 @@ header h1 {
 
 .linha-tentativa {
     display:flex;
-    justify-content:center;
+    justify-content:space-around;
     gap:5px;
     margin-bottom:5px;
 }
 
 .letra {
-    width:60px;
-    height:60px;
+    width:55px;
+    height:55px;
     border:2px solid #CCCCCC;
     border-radius:3px;
     display:flex;
@@ -132,8 +133,8 @@ button:hover {
 #resultado {
     z-index: 1;
     position: fixed;
+    width:95%;
     max-width: 500px;
-    width: 70%;
     background-color: white;
     box-shadow: 0px 0px 10px 10px #00000077;
     border-radius: 5px;
@@ -240,26 +241,33 @@ button:hover {
 #container-tempo {
     display:flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex-grow:1;
 }
 
 #container-tempo span {
-    font-size: 2em;
+    font-size: 22px;
     padding-bottom: 10px;
+}
+
+#container-tempo h3 {
+    font-size: 18px;
 }
 
 #container-share {
     border: 0;
-    font-size: 1em;
     background-color: #60dd60;
     color:white;
     border-radius: 5px;
     padding: 15px 15px;
+    flex-grow:1;
 }
 
 #container-share h3 {
     font-weight: 600;
+    font-size: 18px;
 }
 
 /* FIM DA POP-UP */
