@@ -33,6 +33,22 @@ header h1 {
     cursor: pointer;
 }
 
+#mensagem {
+    background-color: #333333;
+    color: white;
+    font-family: Calibri;
+    font-size: 18px;
+    font-weight: bold;
+    position: fixed;
+    z-index:2;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 25px;
+    border-radius: 10px;
+    transition: opacity 0.5s linear;
+}
+
 #container-geral {
     display:flex;
     flex-direction: column;
@@ -134,9 +150,9 @@ button:hover {
     z-index: 1;
     position: fixed;
     width:95%;
-    max-width: 500px;
+    max-width: 400px;
     background-color: white;
-    box-shadow: 0px 0px 10px 10px #00000077;
+    box-shadow: 0px 0px 5px 5px #00000059;
     border-radius: 5px;
     top: 50%;
     left: 50%;
@@ -148,7 +164,7 @@ button:hover {
 }
 
 .escondida {
-    display:none;
+    opacity:0;
 }
 
 #fechar {
@@ -263,6 +279,7 @@ button:hover {
     border-radius: 5px;
     padding: 15px 15px;
     flex-grow:1;
+    transition: 0.3s;
 }
 
 #container-share h3 {

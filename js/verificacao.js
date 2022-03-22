@@ -47,7 +47,15 @@ function verificarPalpite() {
             i++;
             j = 0;
         }
-    } else { 
+    } else {
+        let mensagem = document.querySelector("#mensagem");
+        mensagem.innerText = "Palavra inválida";
+        mensagem.className = "";
+
+        setTimeout(function(){
+            mensagem.className = "escondida";
+        },2000);
+
         for (x of linhas[i]) {
             x.parentElement.classList.add("animado");
         }
@@ -266,6 +274,12 @@ function compartilhar (){
     emojis.innerHTML = `Joguei Wordnitz #${palavrasSorteaveis.indexOf(sorteio)+1}! ${nroTentativas}/6<br>` + texto;
     navigator.clipboard.writeText(emojis.innerText);
     emojis.innerHTML = "";
+
+    mensagem.innerText = "Texto copiado";
+    mensagem.className = "";
+    setTimeout(function(){
+        mensagem.className = "escondida";
+    },2000);
 }
 
 document.querySelector("#container-share").addEventListener("click", compartilhar);
