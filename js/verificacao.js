@@ -53,7 +53,7 @@ function verificarPalpite() {
         mensagem.className = "";
 
         setTimeout(function(){
-            mensagem.className = "escondida";
+            mensagem.className = "invisivel";
         },2000);
 
         for (x of linhas[i]) {
@@ -278,7 +278,7 @@ function compartilhar (){
     mensagem.innerText = "Texto copiado";
     mensagem.className = "";
     setTimeout(function(){
-        mensagem.className = "escondida";
+        mensagem.className = "invisivel";
     },2000);
 }
 

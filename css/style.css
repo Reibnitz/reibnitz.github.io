@@ -49,6 +49,10 @@ header h1 {
     transition: opacity 0.5s linear;
 }
 
+.invisivel {
+    opacity:0;
+}
+
 #container-geral {
     display:flex;
     flex-direction: column;
@@ -164,7 +168,7 @@ button:hover {
 }
 
 .escondida {
-    opacity:0;
+    display:none;
 }
 
 #fechar {
