@@ -302,41 +302,58 @@ if (localStorage.getItem("diarioString") == null){
     diaHoje = Math.trunc((data.valueOf() - 10800000) / 86400000);
 } else {
     const registroDiarioObj = JSON.parse(localStorage.getItem("diarioString"));
+    diaHoje = Math.trunc((data.valueOf() - 10800000) / 86400000);
 
-    for (let x = 0; x < registroDiarioObj.primeiroPalpite.length; x++){
-        linhas[0][x].innerHTML = registroDiarioObj.primeiroPalpite[x];
-        for (y in registroDiarioObj.primeiroPalpiteClasse[x]){
-            linhas[0][x].parentElement.classList.add(registroDiarioObj.primeiroPalpiteClasse[x][y]);
+    if (Math.floor(Math.trunc((data.valueOf() - 10800000)/86400000) > registroDiarioObj.dia)){
+        localStorage.removeItem("dia")
+        localStorage.removeItem("primeiroPalpite")
+        localStorage.removeItem("primeiroPalpiteClasse")
+        localStorage.removeItem("segundoPalpite")
+        localStorage.removeItem("segundoPalpiteClasse")
+        localStorage.removeItem("terceiroPalpite")
+        localStorage.removeItem("terceiroPalpiteClasse")
+        localStorage.removeItem("quartoPalpite")
+        localStorage.removeItem("quartoPalpiteClasse")
+        localStorage.removeItem("quintoPalpite")
+        localStorage.removeItem("quintoPalpiteClasse")
+        localStorage.removeItem("sextoPalpite")
+        localStorage.removeItem("sextoPalpiteClasse")
+    } else {
+        for (let x = 0; x < registroDiarioObj.primeiroPalpite.length; x++){
+            linhas[0][x].innerHTML = registroDiarioObj.primeiroPalpite[x];
+            for (y in registroDiarioObj.primeiroPalpiteClasse[x]){
+                linhas[0][x].parentElement.classList.add(registroDiarioObj.primeiroPalpiteClasse[x][y]);
+            }
         }
-    }
-    for (let x = 0; x < registroDiarioObj.segundoPalpite.length; x++){
-        linhas[1][x].innerHTML = registroDiarioObj.segundoPalpite[x];
-        for (y in registroDiarioObj.segundoPalpiteClasse[x]){
-            linhas[1][x].parentElement.classList.add(registroDiarioObj.segundoPalpiteClasse[x][y]);
+        for (let x = 0; x < registroDiarioObj.segundoPalpite.length; x++){
+            linhas[1][x].innerHTML = registroDiarioObj.segundoPalpite[x];
+            for (y in registroDiarioObj.segundoPalpiteClasse[x]){
+                linhas[1][x].parentElement.classList.add(registroDiarioObj.segundoPalpiteClasse[x][y]);
+            }
         }
-    }
-    for (let x = 0; x < registroDiarioObj.terceiroPalpite.length; x++){
-        linhas[2][x].innerHTML = registroDiarioObj.terceiroPalpite[x];
-        for (y in registroDiarioObj.terceiroPalpiteClasse[x]){
-            linhas[2][x].parentElement.classList.add(registroDiarioObj.terceiroPalpiteClasse[x][y]);
+        for (let x = 0; x < registroDiarioObj.terceiroPalpite.length; x++){
+            linhas[2][x].innerHTML = registroDiarioObj.terceiroPalpite[x];
+            for (y in registroDiarioObj.terceiroPalpiteClasse[x]){
+                linhas[2][x].parentElement.classList.add(registroDiarioObj.terceiroPalpiteClasse[x][y]);
+            }
         }
-    }
-    for (let x = 0; x < registroDiarioObj.quartoPalpite.length; x++){
-        linhas[3][x].innerHTML = registroDiarioObj.quartoPalpite[x];
-        for (y in registroDiarioObj.quartoPalpiteClasse[x]){
-            linhas[3][x].parentElement.classList.add(registroDiarioObj.quartoPalpiteClasse[x][y]);
+        for (let x = 0; x < registroDiarioObj.quartoPalpite.length; x++){
+            linhas[3][x].innerHTML = registroDiarioObj.quartoPalpite[x];
+            for (y in registroDiarioObj.quartoPalpiteClasse[x]){
+                linhas[3][x].parentElement.classList.add(registroDiarioObj.quartoPalpiteClasse[x][y]);
+            }
         }
-    }
-    for (let x = 0; x < registroDiarioObj.quintoPalpite.length; x++){
-        linhas[4][x].innerHTML = registroDiarioObj.quintoPalpite[x];
-        for (y in registroDiarioObj.quintoPalpiteClasse[x]){
-            linhas[4][x].parentElement.classList.add(registroDiarioObj.quintoPalpiteClasse[x][y]);
+        for (let x = 0; x < registroDiarioObj.quintoPalpite.length; x++){
+            linhas[4][x].innerHTML = registroDiarioObj.quintoPalpite[x];
+            for (y in registroDiarioObj.quintoPalpiteClasse[x]){
+                linhas[4][x].parentElement.classList.add(registroDiarioObj.quintoPalpiteClasse[x][y]);
+            }
         }
-    }
-    for (let x = 0; x < registroDiarioObj.sextoPalpite.length; x++){
-        linhas[5][x].innerHTML = registroDiarioObj.sextoPalpite[x];
-        for (y in registroDiarioObj.sextoPalpiteClasse[x]){
-            linhas[5][x].parentElement.classList.add(registroDiarioObj.sextoPalpiteClasse[x][y]);
+        for (let x = 0; x < registroDiarioObj.sextoPalpite.length; x++){
+            linhas[5][x].innerHTML = registroDiarioObj.sextoPalpite[x];
+            for (y in registroDiarioObj.sextoPalpiteClasse[x]){
+                linhas[5][x].parentElement.classList.add(registroDiarioObj.sextoPalpiteClasse[x][y]);
+            }
         }
     }
 
@@ -401,5 +418,3 @@ const linhaDestaque = Math.min(...indiceVazio)
 console.log(linhaDestaque)
 
 i = linhaDestaque;
-
-// linhas[i][j].parentElement.classList.add("destaque");
