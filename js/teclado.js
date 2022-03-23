@@ -21,8 +21,14 @@ for (let i = 0; i < linhas.length; i++) {
 
 let i = 0;
 let j = 0;
-
-linhas[i][j].parentElement.classList.add("destaque");
+// DEFINIR PONTO INICIAL
+// let conteudo = linhas.map((linha)=> {
+//     return linha.map((x) => {
+//         return x.innerHTML
+//     })
+// });
+// console.log(conteudo);
+// linhas[i][j].parentElement.classList.add("destaque");
 
 function usarTecladoVirtual(event) {
     var alvo = event.target;

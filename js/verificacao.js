@@ -36,9 +36,10 @@ function verificarPalpite() {
     if (listaSemAcento.includes(palpite)) {
         alterarCores();
         voltarAcentos();
+        atualizarDiario()
         if (palpite.toUpperCase() == palavra || i + j == 10) {
             atualizarHistorico();
-            imprimirHistorico();
+            imprimirHistorico();            
             setTimeout(function(){
                 const popup = document.querySelector("#resultado");
                 popup.classList.remove("escondida");
@@ -271,7 +272,7 @@ function compartilhar (){
     }
     if (palpite != palavra) {nroTentativas = "*"}
     
-    emojis.innerHTML = `Joguei Wordnitz #${palavrasSorteaveis.indexOf(sorteio)+1}! ${nroTentativas}/6<br>` + texto;
+    emojis.innerHTML = `Joguei Wordnitz #${palavrasSorteaveis.indexOf(sorteio)+1}! ${nroTentativas}/6<br>${texto}<br>Jogue em https://reibnitz.github.io/`;
     navigator.clipboard.writeText(emojis.innerText);
     emojis.innerHTML = "";
 
@@ -292,4 +293,113 @@ document.querySelector("#fechar").addEventListener("click", fecharResultado);
 document.querySelector("#stats").addEventListener("click",function(){
     imprimirHistorico();
     document.querySelector("#resultado").className = "";
-})
+});
+
+//TENTANDO FAZER O LOCAL STORAGE PARA PALPITES JÁ REALIZADOS
+
+
+if (localStorage.getItem("diarioString") == null){
+    diaHoje = Math.trunc((data.valueOf() - 10800000) / 86400000);
+} else {
+    const registroDiarioObj = JSON.parse(localStorage.getItem("diarioString"));
+
+    for (let x = 0; x < registroDiarioObj.primeiroPalpite.length; x++){
+        linhas[0][x].innerHTML = registroDiarioObj.primeiroPalpite[x];
+        for (y in registroDiarioObj.primeiroPalpiteClasse[x]){
+            linhas[0][x].parentElement.classList.add(registroDiarioObj.primeiroPalpiteClasse[x][y]);
+        }
+    }
+    for (let x = 0; x < registroDiarioObj.segundoPalpite.length; x++){
+        linhas[1][x].innerHTML = registroDiarioObj.segundoPalpite[x];
+        for (y in registroDiarioObj.segundoPalpiteClasse[x]){
+            linhas[1][x].parentElement.classList.add(registroDiarioObj.segundoPalpiteClasse[x][y]);
+        }
+    }
+    for (let x = 0; x < registroDiarioObj.terceiroPalpite.length; x++){
+        linhas[2][x].innerHTML = registroDiarioObj.terceiroPalpite[x];
+        for (y in registroDiarioObj.terceiroPalpiteClasse[x]){
+            linhas[2][x].parentElement.classList.add(registroDiarioObj.terceiroPalpiteClasse[x][y]);
+        }
+    }
+    for (let x = 0; x < registroDiarioObj.quartoPalpite.length; x++){
+        linhas[3][x].innerHTML = registroDiarioObj.quartoPalpite[x];
+        for (y in registroDiarioObj.quartoPalpiteClasse[x]){
+            linhas[3][x].parentElement.classList.add(registroDiarioObj.quartoPalpiteClasse[x][y]);
+        }
+    }
+    for (let x = 0; x < registroDiarioObj.quintoPalpite.length; x++){
+        linhas[4][x].innerHTML = registroDiarioObj.quintoPalpite[x];
+        for (y in registroDiarioObj.quintoPalpiteClasse[x]){
+            linhas[4][x].parentElement.classList.add(registroDiarioObj.quintoPalpiteClasse[x][y]);
+        }
+    }
+    for (let x = 0; x < registroDiarioObj.sextoPalpite.length; x++){
+        linhas[5][x].innerHTML = registroDiarioObj.sextoPalpite[x];
+        for (y in registroDiarioObj.sextoPalpiteClasse[x]){
+            linhas[5][x].parentElement.classList.add(registroDiarioObj.sextoPalpiteClasse[x][y]);
+        }
+    }
+
+}
+
+function atualizarDiario(){
+    diaHoje = Math.trunc((data.valueOf() - 10800000) / 86400000);
+
+    primeiroPalpite = linhas[0].map((x)=>{return x.innerHTML});
+    primeiroPalpiteClasse = linhas[0].map((x)=>{return x.parentElement.classList});
+
+    segundoPalpite = linhas[1].map((x)=>{return x.innerHTML});
+    segundoPalpiteClasse = linhas[1].map((x)=>{return x.parentElement.classList});
+
+    terceiroPalpite = linhas[2].map((x)=>{return x.innerHTML});
+    terceiroPalpiteClasse = linhas[2].map((x)=>{return x.parentElement.classList});
+
+    quartoPalpite = linhas[3].map((x)=>{return x.innerHTML});
+    quartoPalpiteClasse = linhas[3].map((x)=>{return x.parentElement.classList});
+
+    quintoPalpite = linhas[4].map((x)=>{return x.innerHTML});
+    quintoPalpiteClasse = linhas[4].map((x)=>{return x.parentElement.classList});
+
+    sextoPalpite = linhas[5].map((x)=>{return x.innerHTML});
+    sextoPalpiteClasse = linhas[5].map((x)=>{return x.parentElement.classList});
+
+    const registroDiario = {
+        "dia" : diaHoje,
+        "primeiroPalpite" : primeiroPalpite,
+        "primeiroPalpiteClasse" : primeiroPalpiteClasse,
+        "segundoPalpite" : segundoPalpite,
+        "segundoPalpiteClasse" : segundoPalpiteClasse,
+        "terceiroPalpite" : terceiroPalpite,
+        "terceiroPalpiteClasse" : terceiroPalpiteClasse,
+        "quartoPalpite" : quartoPalpite,
+        "quartoPalpiteClasse" : quartoPalpiteClasse,
+        "quintoPalpite" : quintoPalpite,
+        "quintoPalpiteClasse" : quintoPalpiteClasse,
+        "sextoPalpite" : sextoPalpite,
+        "sextoPalpiteClasse" : sextoPalpiteClasse
+    }    
+    localStorage.setItem("diarioString", JSON.stringify(registroDiario));
+}
+
+let conteudo = linhas.map((linha)=> {
+    return linha.map((x) => {
+        return x.innerHTML
+    });
+});
+console.log(conteudo);
+
+let indiceVazio = [];
+for (linha of conteudo) {
+    for (item of linha) {
+        if (item == "") {
+            indiceVazio.push(conteudo.indexOf(linha));
+            break
+        }
+    }
+}
+const linhaDestaque = Math.min(...indiceVazio)
+console.log(linhaDestaque)
+
+i = linhaDestaque;
+
+// linhas[i][j].parentElement.classList.add("destaque");
