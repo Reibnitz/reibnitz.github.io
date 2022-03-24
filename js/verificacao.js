@@ -299,7 +299,11 @@ function fecharJanela () {
 }
 
 document.querySelector("#fechar-stats").addEventListener("click", fecharJanela);
+
 document.querySelector("#fechar-explicacao").addEventListener("click", fecharJanela);
+document.querySelector("#abrir-explicacao").addEventListener("click", function(){
+    document.querySelector("#explicacao").className = "";
+});
 
 document.querySelector("#stats").addEventListener("click",function(){
     imprimirHistorico();
