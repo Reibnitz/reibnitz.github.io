@@ -40,7 +40,7 @@ header h1 {
 #mensagem {
     background-color: #333333;
     color: white;
-    font-family: Calibri;
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: bold;
     position: fixed;
@@ -113,7 +113,7 @@ header h1 {
 }
 
 span {
-    font-family: Calibri;
+    font-family: 'Roboto', sans-serif;
     font-weight: 800;
     font-size: 40px;
 }
@@ -126,6 +126,8 @@ span {
     border-radius: 5px;
     transition:0.3s;
     background-color:#EEEEEE;
+    font-family: 'Roboto', sans-serif;
+    color: black;
 }
 
 button:hover {
@@ -168,7 +170,7 @@ button:hover {
 }
 
 #resultado {
-    font-family: Calibri;
+    font-family: 'Roboto', sans-serif;
 }
 
 .escondida {
