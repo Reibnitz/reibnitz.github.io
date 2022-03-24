@@ -13,6 +13,7 @@ if (historicoStorage == null) {
     var co = 0;
     var ss = 0;
     var falhas = 0;
+    document.querySelector("#explicacao").className = "";
 } else {
     const historicoObj = JSON.parse(localStorage.getItem("historicoString"));
     jogosJogados = historicoObj.jogosJogados;
@@ -277,7 +278,7 @@ function compartilhar (){
             }
         }
     }
-    if (palpite.toLowerCase() != sorteio) {nroTentativas = "*"}
+    if (palpite.toLowerCase() != sorteio) {nroTentativas = "☠️"}
     
     emojis.innerHTML = `Joguei Wordnitz #${palavrasSorteaveis.indexOf(sorteio)+1}! ${nroTentativas}/6<br>${texto}<br>Jogue em https://reibnitz.github.io/`;
     navigator.clipboard.writeText(emojis.innerText);
@@ -292,11 +293,14 @@ function compartilhar (){
 
 document.querySelector("#container-share").addEventListener("click", compartilhar);
 
-function fecharResultado () {
+function fecharJanela () {
     document.querySelector("#resultado").className = "escondida";
+    document.querySelector("#explicacao").className = "escondida";
 }
 
-document.querySelector("#fechar").addEventListener("click", fecharResultado);
+document.querySelector("#fechar-stats").addEventListener("click", fecharJanela);
+document.querySelector("#fechar-explicacao").addEventListener("click", fecharJanela);
+
 document.querySelector("#stats").addEventListener("click",function(){
     imprimirHistorico();
     document.querySelector("#resultado").className = "";

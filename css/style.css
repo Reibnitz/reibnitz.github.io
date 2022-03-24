@@ -177,7 +177,7 @@ button:hover {
     display:none;
 }
 
-#fechar {
+.fechar {
     position:fixed;
     top: 3px;
     padding: 0 3px;
@@ -186,7 +186,7 @@ button:hover {
     font-size: 22px;
 }
 
-#fechar:hover {
+.fechar:hover {
     cursor: pointer;
 }
 
@@ -202,12 +202,13 @@ button:hover {
     text-align: center;
     font-size: 24px;
     font-weight: 900;
-    margin: 5px auto;
+    margin: 10px auto;
 }
 
 #resultado p {
     text-align: center;
     font-size: 16px;
+    margin: 0 auto;
 }
 
 .container-estatisticas {
@@ -248,7 +249,7 @@ button:hover {
 }
 
 #falhas-barra {
-    margin-left: 21px;
+    margin-left: 16px;
 }
 
 .barra span {
@@ -298,6 +299,41 @@ button:hover {
 }
 
 /* FIM DA POP-UP */
+
+/* EXPLICAÇÃO */
+#explicacao {
+    z-index: 1;
+    position: fixed;
+    width:95%;
+    max-width: 400px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 5px #00000059;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#explicacao p {
+    line-height: 1em;
+    margin: 0 0 10px 0;
+}
+
+#explicacao h3 {
+    margin: 10px 0;
+    text-align: center;
+}
+
+#explicacao img {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+
+/* FIM DA EXPLICAÇÃO */
 
 /* cores */
 

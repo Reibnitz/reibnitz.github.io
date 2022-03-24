@@ -107,7 +107,7 @@
 
         <div id="resultado" class="escondida">
             <h3>Estatísticas</h3>
-            <div id="fechar">X</div>
+            <div id="fechar-stats" class="fechar">X</div>
             <section class="estatisticas">
                 <div class="container-estatisticas"><span id="jogos"></span><p>Jogos</p></div>
                 <div class="container-estatisticas"><span id="vitorias"></span><p>Vitórias</p></div>
@@ -130,6 +130,20 @@
             </div>
         </div>
         <span id="clipboard"></span>
+
+        <div id="explicacao" class="escondida">
+            <h3>REGRAS</h3>
+            <div id="fechar-explicacao" class="fechar">X</div>
+            <p>O objetivo desse jogo é acertar a palavra secreta dentro de 6 palpites.</p>
+            <p>Cada palpite precisa ser uma palavra válida de cinco letras. Pressione Enter para verificar o palpite.</p>
+            <p>Após o palpite ser verificado, as cores das caixinhas irão mudar conforme o exemplo abaixo:</p>
+            <img src="/exemplo.png" id="img-exemplo">
+            <p>A cor amarela indica que a palavra secreta contém essa letra, porém não nessa posição.</p>
+            <p>A cor verde indica que a palavra secreta contém essa letra nessa mesma posição.</p>
+            <p>A cor cinza indica que a palavra secreta não contém essa letra.</p>                
+            <p>Acentuação e Ç são colocadas automaticamente caso façam parte do palpite. Isso não indica que a palavra secreta contém esse acento.</p>                
+            <p>A cada dia, uma nova palavra secreta será sorteada.</p>
+        </div>
 
         
 

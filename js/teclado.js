@@ -102,6 +102,6 @@ function usarTecladoFisico(event) {
     }
 
     if (event.keyCode == 27) {
-        fecharResultado();
+        fecharJanela();
     }
 }
