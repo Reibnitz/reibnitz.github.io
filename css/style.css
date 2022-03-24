@@ -1,3 +1,7 @@
+ * { /* remove zoom no double tap do iOS */
+    touch-action: manipulation;
+}
+
 html, body {
     height:100%;
     margin:0;
