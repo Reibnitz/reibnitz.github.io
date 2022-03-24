@@ -35,11 +35,18 @@ function verificarPalpite() {
 
     if (listaSemAcento.includes(palpite)) {
         alterarCores();
+        atualizarDiario();
         voltarAcentos();
-        atualizarDiario()
+
+        if (palpite.toUpperCase() != palavra && i + j == 10){
+            let mensagem = document.querySelector("#mensagem");
+            mensagem.innerText = sorteio.toUpperCase();
+            mensagem.className = "";
+        }
+        
         if (palpite.toUpperCase() == palavra || i + j == 10) {
             atualizarHistorico();
-            imprimirHistorico();            
+            imprimirHistorico();
             setTimeout(function(){
                 const popup = document.querySelector("#resultado");
                 popup.classList.remove("escondida");
@@ -131,11 +138,10 @@ function verificarDuplicatas(letra, palavra, letrasUsadas) {
 }
 
 function atualizarHistorico() {
-    let palpite = gerarPalpite();
-    
+    let palpite = gerarPalpite().toLowerCase();
     jogosJogados++;
 
-    if (palpite.toUpperCase() == palavra){
+    if (palpite == sorteio){
         jogosVencidos++;
         seqAtual++;
 
@@ -187,7 +193,8 @@ function atualizarHistorico() {
 }
 
 function imprimirHistorico() {
-    let palpite = gerarPalpite();
+    let palpite = gerarPalpite().toLowerCase();
+
     const historicoObj = JSON.parse(localStorage.getItem("historicoString"));
 
     document.querySelector("#jogos").innerText = historicoObj.jogosJogados;
@@ -195,7 +202,7 @@ function imprimirHistorico() {
     document.querySelector("#seq-atual").innerText = historicoObj.seqAtual;
     document.querySelector("#mel-seq").innerText = historicoObj.seqMelhor;
 
-    if (palpite != palavra) {
+    if (palpite != sorteio) {
         document.querySelector("#falhas-barra").style.background = "#60dd60";
     } else {
         document.querySelector(`#t${i+1}-barra`).style.background = "#60dd60";
@@ -403,7 +410,6 @@ let conteudo = linhas.map((linha)=> {
         return x.innerHTML
     });
 });
-console.log(conteudo);
 
 let indiceVazio = [];
 for (linha of conteudo) {
@@ -415,6 +421,5 @@ for (linha of conteudo) {
     }
 }
 const linhaDestaque = Math.min(...indiceVazio)
-console.log(linhaDestaque)
 
 i = linhaDestaque;
