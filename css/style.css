@@ -20,8 +20,8 @@ header {
 header h2 {
     position: fixed;
     left: 20px;
-    top: -5px;
-    font-family: 'Roboto', sans-serif;
+    top: -8px;
+    font-family: 'Poppins', sans-serif;
     font-weight: 1000;
 }
 
@@ -52,7 +52,7 @@ header h1 {
 #mensagem {
     background-color: #333333;
     color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: bold;
     position: fixed;
@@ -157,9 +157,9 @@ header h1 {
 }
 
 span {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 800;
-    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
 }
 
 .key, .backspace, .enter {
@@ -170,7 +170,7 @@ span {
     border-radius: 5px;
     transition:0.3s;
     background-color:#EEEEEE;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: black;
 }
 
@@ -214,7 +214,7 @@ button:hover {
 }
 
 #resultado {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .escondida {
@@ -228,6 +228,8 @@ button:hover {
     padding-bottom: 3px;
     right: 10px;
     font-size: 22px;
+    font-family: 'Poppins', sans-serif;;
+    font-weight: 700;
 }
 
 .fechar:hover {
@@ -244,14 +246,14 @@ button:hover {
 
 #resultado h3 {
     text-align: center;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 900;
-    margin: 10px auto;
+    margin: 6px auto;
 }
 
 #resultado p {
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     margin: 0 auto;
 }
 
@@ -276,9 +278,10 @@ button:hover {
 
 .distribuicao h6 {
     text-align: left;
-    font-size: 1em;
+    font-size: 14px;
+    font-weight: 100;
     margin-left: 1em;
-    line-height: 1em;
+    line-height: 0.5em;
 }
 
 .barra {
@@ -293,7 +296,7 @@ button:hover {
 }
 
 #falhas-barra {
-    margin-left: 16px;
+    margin-left: 19px;
 }
 
 .barra span {
@@ -319,12 +322,12 @@ button:hover {
 }
 
 #container-tempo span {
-    font-size: 22px;
+    font-size: 18px;
     padding-bottom: 10px;
 }
 
 #container-tempo h3 {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #container-share {
@@ -340,6 +343,7 @@ button:hover {
 #container-share h3 {
     font-weight: 600;
     font-size: 18px;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* FIM DA POP-UP */
@@ -357,12 +361,13 @@ button:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 0 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 #explicacao p {
-    line-height: 1em;
-    margin: 0 0 10px 0;
+    line-height: 1.2em;
+    font-size: 14px;
+    margin: 0 0 6px 0;
 }
 
 #explicacao h3 {
