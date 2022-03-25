@@ -111,6 +111,38 @@ header h1 {
     flex-shrink:1;
 }
 
+@media (max-height: 650px) {
+    .linha-tentativa {
+        gap:2px;
+        margin-bottom:2px;
+    }
+
+    .letra {
+        width:50px;
+        height:50px;
+    }
+
+    .letra-palpite {
+        font-size: 30px;
+    }
+}
+
+@media (max-height: 600px) {
+    .linha-tentativa {
+        gap:2px;
+        margin-bottom:2px;
+    }
+
+    .letra {
+        width:45px;
+        height:45px;
+    }
+
+    .letra-palpite {
+        font-size: 26px;
+    }
+}
+
 .animado {
     animation: 0.15s balanca;
 }
