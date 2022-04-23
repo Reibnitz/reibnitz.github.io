@@ -40,7 +40,7 @@ export class Controller {
         if (name.length > 0) {
             this.view.addItemToList(name, this.list.getId());
             this.list.addItem(name);
-            this.view.generateGif(name);
+            // this.view.generateGif(name);
             this.inputItem.value = '';
             this.inputItem.focus();
             this.storage.update(this.list.getItemList());
