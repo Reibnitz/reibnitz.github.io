@@ -289,15 +289,14 @@ function compartilhar (){
         });
     } else {
         navigator.clipboard.writeText(emojis.innerText);
+        mensagem.innerText = "Texto copiado";
+        mensagem.className = "";
+        setTimeout(function(){
+        mensagem.className = "invisivel";
+        },2000);
     }
     
     emojis.innerHTML = "";
-
-    mensagem.innerText = "Texto copiado";
-    mensagem.className = "";
-    setTimeout(function(){
-        mensagem.className = "invisivel";
-    },2000);
 }
 
 window.mobileCheck = function() {
