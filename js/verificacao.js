@@ -284,7 +284,9 @@ function compartilhar (){
     //navigator.clipboard.writeText(emojis.innerText);
     //
     if (mobileCheck()) {
-        navigator.share(emojis.innerHTML);
+        navigator.share({
+            text: emojis.innerHTML
+        });
     } else {
         navigator.clipboard.writeText(emojis.innerText);
     }
