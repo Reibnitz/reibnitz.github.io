@@ -285,7 +285,7 @@ function compartilhar (){
     //
     if (mobileCheck()) {
         navigator.share({
-            text: emojis.innerHTML
+            text: emojis.innerText
         });
     } else {
         navigator.clipboard.writeText(emojis.innerText);
