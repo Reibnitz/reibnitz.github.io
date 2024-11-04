@@ -280,7 +280,7 @@ function compartilhar (){
     }
     if (palpite.toLowerCase() != sorteio) {nroTentativas = "☠️"}
     
-    emojis.innerHTML = `Joguei Wordnitz #${palavrasSorteaveis.indexOf(sorteio)+1}! ${nroTentativas}/6<br>${texto}<br>Jogue em https://reibnitz.github.io/`;
+    emojis.innerHTML = `Joguei Wordnitz #${palavrasSorteaveis.indexOf(sorteio)+896}! ${nroTentativas}/6<br>${texto}<br>Jogue em https://reibnitz.github.io/`;
     //navigator.clipboard.writeText(emojis.innerText);
     //
     if (mobileCheck()) {
