@@ -47,7 +47,6 @@ function usarTecladoVirtual(event) {
     if (alvo.classList.contains("backspace") && j > 0 && j == linhas[i].length-1 && !linhas[i][j].innerText == "") {
         linhas[i][j].parentElement.classList.remove("animado")
         linhas[i][j].innerText = "";
-        j--;
     } else if (alvo.classList.contains("backspace") && j == 0) {
         linhas[i][j].parentElement.classList.remove("animado")
         linhas[i][j].innerText = "";
@@ -82,7 +81,6 @@ function usarTecladoFisico(event) {
     if (event.key == "Backspace" && j > 0 && j == linhas[i].length-1 && !linhas[i][j].innerText == "") {
         linhas[i][j].parentElement.classList.remove("animado")
         linhas[i][j].innerText = "";
-        j--;
     } else if (event.key == "Backspace" && j == 0) {
         linhas[i][j].parentElement.classList.remove("animado")
         linhas[i][j].innerText = "";
